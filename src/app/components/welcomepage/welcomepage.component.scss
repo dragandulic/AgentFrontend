@@ -1,0 +1,33 @@
+.clock {
+    margin-left: 12cm;
+}
+
+.clock1{
+    margin-left: 2.2cm;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.column {
+    float: left;
+    padding: 10px;
+    height: 400px; /* Should be removed. Only for demonstration */
+}
+
+.left {
+    width: 20cm;
+    height: 15cm;
+}
+
+.right {
+    width: 10cm;
+    height: 15cm;
+}
+
+* {
+    box-sizing: border-box;
+}

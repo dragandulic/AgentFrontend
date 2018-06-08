@@ -1,0 +1,25 @@
+<div>
+    <h1 class="display-3 position">Registration</h1>
+    <div class="login-page">
+        <div class="form">
+          <form class="login-form">
+            <label>Name:</label>
+            <input type="text" placeholder="name" [(ngModel)]="agent1.name" name="name" #name1 required/>
+            <label>Surname:</label>
+            <input type="text" placeholder="surname" [(ngModel)]="agent1.surname" name="surname" #surname1 required/>
+            <label>Email:</label>
+            <input type="text" placeholder="email" [(ngModel)]="agent1.email" name="email" #email1 required/>
+            <label>Password:</label>
+            <input type="text" placeholder="newPassword" [(ngModel)]="agent1.newPassword" name="newPassword" #newPassword1 required/>
+            <label>Confirm password:</label>
+            <input type="text" placeholder="repeatPassword" [(ngModel)]="agent1.repeatPassword" name="repeatPassword" #repeatPassword1 required/>
+            <label>Address:</label>
+            <input type="text" placeholder="address" [(ngModel)]="agent1.address" name="address" #address1 required/>
+            <label>Business Registration Number:</label>
+            <input type="text" placeholder="businessRegNum" [(ngModel)]="agent1.businessRegNum" name="businessRegNum" #businessRegNum1 required/>
+            <input class="submit font-weight-bold" type="submit" value="REGISTRATION" (click)="register(); ">
+            <p class="message">Not registered? <a href="#">Create an account</a></p>
+          </form>
+        </div>
+    </div>
+  </div>

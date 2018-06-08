@@ -1,7 +1,14 @@
-<div class="container" >
+<div class="row">
 
 
-  <h1 class="display-2">Agent application</h1>
+  <div class="container clock column left"  >
 
-  <button type="button" class="btn btn-primary"><a [routerLink]="['dashboard']" style="text-decoration:none;color:black">Dashboard</a></button>
+    <h1 class="display-2">Agent application</h1>
+
+  </div>
+  <div class="column right clock1">
+    <button type="button" class="btn btn-primary"><a [routerLink]="['dashboard']" style="text-decoration:none;color:black">Dashboard</a></button>
+    <button type="button" class="btn btn-primary"><a [routerLink]="['login']" style="text-decoration:none; color:black">Login</a></button>
+    <button type="button" class="btn btn-primary"><a [routerLink]="['registration']" style="text-decoration:none; color:black">Registration</a></button>
+  </div>
 </div>
