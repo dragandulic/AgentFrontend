@@ -1,3 +1,21 @@
-<p>
-  dashboard works!
-</p>
+<div class="container-fluid">
+
+  <nav class="navbar navbar-expand-sm bg-dark navbar-light">
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link linkc" [routerLink]="['newaccommodation']" >New accommodation</a>
+      </li>
+  
+      <li class="nav-item">
+        <a class="nav-link linkc" [routerLink]="['mineaccommodation']" >Mine accommodations</a>
+      </li>
+
+    </ul>
+  </nav>
+
+</div>
+
+<div>
+
+  <router-outlet></router-outlet>
+</div>

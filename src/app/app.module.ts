@@ -9,6 +9,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { AgentService } from './services/agent/agent.service';
+import { NewaccommodationComponent } from './components/newaccommodation/newaccommodation.component';
+import { MineaccommodationComponent } from './components/mineaccommodation/mineaccommodation.component';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { AgentService } from './services/agent/agent.service';
     WelcomepageComponent,
     DashboardComponent,
     LoginComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    NewaccommodationComponent,
+    MineaccommodationComponent
   ],
   imports: [
     BrowserModule,

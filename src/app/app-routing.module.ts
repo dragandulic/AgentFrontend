@@ -4,6 +4,8 @@ import { WelcomepageComponent } from './components/welcomepage/welcomepage.compo
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
+import { NewaccommodationComponent } from './components/newaccommodation/newaccommodation.component';
+import { MineaccommodationComponent } from './components/mineaccommodation/mineaccommodation.component';
 
 const routes: Routes = [
 
@@ -11,7 +13,14 @@ const routes: Routes = [
   { path: 'welcomepage', component: WelcomepageComponent},
   { path: 'dashboard', component: DashboardComponent},
   { path: 'login', component: LoginComponent},
-  { path: 'registration', component: RegistrationComponent}
+  { path: 'registration', component: RegistrationComponent},
+  { path: 'dashboard', component: DashboardComponent,
+     children:[
+        { path: 'newaccommodation', component: NewaccommodationComponent},
+        { path: 'mineaccommodation', component: MineaccommodationComponent}
+     ]
+    
+  }
 
 ];
 
