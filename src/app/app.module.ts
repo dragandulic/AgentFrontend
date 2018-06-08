@@ -11,6 +11,8 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { AgentService } from './services/agent/agent.service';
 import { NewaccommodationComponent } from './components/newaccommodation/newaccommodation.component';
 import { MineaccommodationComponent } from './components/mineaccommodation/mineaccommodation.component';
+import { Accommodation } from './accommodation';
+import { AccommodationService } from './services/accommodation/accommodation.service';
 
 
 @NgModule({
@@ -29,7 +31,7 @@ import { MineaccommodationComponent } from './components/mineaccommodation/minea
     HttpClientModule,
     FormsModule
   ],
-  providers: [AgentService],
+  providers: [AgentService,AccommodationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

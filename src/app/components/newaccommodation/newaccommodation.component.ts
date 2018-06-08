@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AccommodationService } from '../../services/accommodation/accommodation.service';
 
 @Component({
   selector: 'app-newaccommodation',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewaccommodationComponent implements OnInit {
 
-  constructor() { }
+  accommodation: any={};
+
+  constructor(private accommodationService: AccommodationService) { }
 
   ngOnInit() {
+  }
+
+
+  addNewAccommodation(): void{
+
+    this.accommodationService.newAccommodation(this.accommodation)
+    .subscribe(data => this.accommodation = data);
+
+  }
+
+  selectChangeHandler (event : any){
+    this.accommodation.type =  event.target.value;
   }
 
 }
