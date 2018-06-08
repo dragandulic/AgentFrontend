@@ -18,7 +18,7 @@
             <label>Business Registration Number:</label>
             <input type="text" placeholder="businessRegNum" [(ngModel)]="agent1.businessRegNum" name="businessRegNum" #businessRegNum1 required/>
             <input class="submit font-weight-bold" type="submit" value="REGISTRATION" (click)="register(); ">
-            <p class="message">Not registered? <a href="#">Create an account</a></p>
+            <button class="message"><a onclick="location.href='/login'">LOGIN</a></button>
           </form>
         </div>
     </div>
