@@ -18,4 +18,16 @@ export class AccommodationService {
     return this.http.post<any>('http://localhost:8086/accommodation/addAccommodation', acc, httpOptions);
 
   }
+
+  mineAccommodation(id): Observable<any>{
+
+    return this.http.get<any>('http://localhost:8086/accommodation/getAllAccommodation/'+id);
+
+  }
+
+  findAccommodation(id): Observable<any>{
+
+    return this.http.get<any>('http://localhost:8086/accommodation/getAccommodation/'+id);
+
+  }
 }

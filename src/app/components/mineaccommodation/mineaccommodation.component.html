@@ -1,3 +1,144 @@
-<p>
-  mineaccommodation works!
-</p>
+
+
+<div class="container-fluid">
+    
+    <div class="row ">
+      <div class="col position" style="background-color:rgb(206, 206, 248);">
+          <ul *ngFor="let accommodation of accommodations">
+              <div>
+                  <li>
+                    <p class="html">Hotel: {{accommodation.name}} <br>
+                    Type: {{accommodation.type}} <br>
+                    Description: {{accommodation.description}} <br>
+                   
+                    </p>
+                    <div>
+                      <button class="btn btn-primary" id="{{accommodation.id}}" (click)="editAcc(accommodation.id)">Edit</button>
+                      <button class="btn btn-primary" id="{{accommodation.id}}" (click)="deleteAcc(accommodation.id)">Delete</button>
+                    </div>
+                  </li>
+          
+              </div>
+          
+            </ul>
+      </div>
+      
+      <div class="col position1" style="background-color:rgb(240, 224, 196);">
+          <div *ngIf="acc" class="container bg-light" style="margin-top: 14px; margin-bottom: 50px;">
+
+              <form  action="">
+              
+                <div class="form-group ">
+                  <label class="col-sm-2" for="Name">Name:</label>
+                  <input class="col-sm-2" type="text" [(ngModel)]="acc.name" name="name" style="font-size: 12px" >
+                </div>
+
+                <div class="form-group ">
+                    <label class="col-sm-2" for="Name">Type:</label>
+                    <select id="type" (change)="selectChangeHandler($event)" name="type" style="font-size: 13px" class="col-sm-2">
+                        <option selected>Choose...</option>
+                        <option value="Hotel">Hotel</option>
+                        <option value="Bad&breakfast">Bad&breakfast</option>
+                        <option value="Apartman">Apartman</option>
+                    </select>
+                </div>
+                <div class="form-group ">
+                    <label class="col-sm-2 d-inline align-top"  for="Name">Description:</label>
+                    <textarea class="form-control col-sm-2 d-inline" [(ngModel)]="acc.description" name="description" style="margin-left: 70px; font-size: 11px;" rows="2"  id="comment"></textarea>
+                    
+                </div>
+                <legend style="margin-left: 12px;">Location</legend>
+                <div class="form-group ">
+                    <label class="col-sm-2" for="Country">Country:</label>
+                    <input class="col-sm-2" type="text" [(ngModel)]="acc.country" name="country" style="font-size: 12px" placeholder="Country">
+                </div>
+                <div class="form-group ">
+                    <label class="col-sm-2" for="City">City:</label>
+                    <input class="col-sm-2" type="text" [(ngModel)]="acc.city" name="city" style="font-size: 12px" placeholder="City">
+                </div>
+                <div class="form-group ">
+                    <label class="col-sm-2" for="Address">Address:</label>
+                    <input class="col-sm-2" type="text" [(ngModel)]="acc.address" name="address" style="font-size: 12px" placeholder="Address">
+                </div>
+                <div class="row"></div>
+                
+                <legend style="margin-left: 12px;">Additional services</legend>
+                <div style="margin-left: 12px;" class="form-group">
+                  <div class="form-check">
+                    <input class="form-check-input" [(ngModel)]="acc.wiFi" name="wiFi" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                       WiFi
+                    </label>
+                  </div>
+                </div>
+                <div style="margin-left: 12px;" class="form-group">
+                  <div class="form-check">
+                    <input class="form-check-input" [(ngModel)]="acc.tv" name="tv" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                      TV
+                    </label>
+                  </div>
+                </div>
+                <div style="margin-left: 12px;" class="form-group">
+                  <div class="form-check">
+                    <input class="form-check-input" [(ngModel)]="acc.parking" name="parking" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                      Parking
+                    </label>
+                  </div>
+                </div>
+                <div style="margin-left: 12px;" class="form-group">
+                  <div class="form-check">
+                    <input class="form-check-input" [(ngModel)]="acc.kitchen" name="kitchen" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                      Kitchen
+                    </label>
+                  </div>
+                </div>
+                <div style="margin-left: 12px;" class="form-group">
+                  <div class="form-check">
+                    <input class="form-check-input" [(ngModel)]="acc.breakfast" name="breakfast" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                      Breakfast
+                    </label>
+                  </div>
+                </div>
+                <div style="margin-left: 12px;" class="form-group">
+                  <div class="form-check">
+                    <input class="form-check-input" [(ngModel)]="acc.halfBoard" name="halfBoard" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                      HalfBoard
+                    </label>
+                  </div>
+                </div>
+                <div style="margin-left: 12px;" class="form-group">
+                  <div class="form-check">
+                    <input class="form-check-input" [(ngModel)]="acc.fullBoard" name="fullBoard" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                        FullBoard
+                    </label>
+                  </div>
+                </div>
+                <div style="margin-left: 12px;" class="form-group">
+                  <div class="form-check">
+                    <input class="form-check-input" [(ngModel)]="acc.bathroom" name="bathroom" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                        Bathroom
+                    </label>
+                  </div>
+                </div>
+
+
+
+
+               
+                <button style="margin-left: 300px;" type="submit" (click)="addNewAccommodation()" class="btn btn-primary">Submit</button>
+              
+              
+              </form>
+                            
+              </div>
+      </div>
+      
+    </div>
+  </div>

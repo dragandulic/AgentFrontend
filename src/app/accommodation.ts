@@ -1,6 +1,6 @@
 export class Accommodation{
 
-   
+	id: number;
     idAccommodation: number;
 	name: string;
 	type: string; 
