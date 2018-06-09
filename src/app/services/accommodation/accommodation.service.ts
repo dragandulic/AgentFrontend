@@ -30,4 +30,22 @@ export class AccommodationService {
     return this.http.get<any>('http://localhost:8086/accommodation/getAccommodation/'+id);
 
   }
+
+  findLocation(id): Observable<any>{
+
+    return this.http.get<any>('http://localhost:8086/location/'+id);
+
+  }
+
+  findAS(id): Observable<any>{
+
+    return this.http.get<any>('http://localhost:8086/additionalServices/'+id);
+
+  }
+
+  editAccommodation(id,accommodation: Accommodation): Observable<any>{
+
+    return this.http.put<any>('http://localhost:8086/accommodation/editAccommodation/'+id, accommodation,httpOptions);
+
+  }
 }

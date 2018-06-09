@@ -3,7 +3,7 @@
 <div class="container-fluid">
     
     <div class="row ">
-      <div class="col position" style="background-color:rgb(206, 206, 248);">
+      <div class="col position bg-light" style="background-color:rgb(206, 206, 248);">
           <ul *ngFor="let accommodation of accommodations">
               <div>
                   <li>
@@ -23,8 +23,8 @@
             </ul>
       </div>
       
-      <div class="col position1" style="background-color:rgb(240, 224, 196);">
-          <div *ngIf="acc" class="container bg-light" style="margin-top: 14px; margin-bottom: 50px;">
+      <div class="col position1" >
+          <div *ngIf="acc && loc && adds"  class="container bg-light" style="margin-top: 14px; margin-bottom: 50px;">
 
               <form  action="">
               
@@ -50,22 +50,22 @@
                 <legend style="margin-left: 12px;">Location</legend>
                 <div class="form-group ">
                     <label class="col-sm-2" for="Country">Country:</label>
-                    <input class="col-sm-2" type="text" [(ngModel)]="acc.country" name="country" style="font-size: 12px" placeholder="Country">
+                    <input class="col-sm-2" type="text" [(ngModel)]="loc.country" name="country" style="font-size: 12px" >
                 </div>
                 <div class="form-group ">
                     <label class="col-sm-2" for="City">City:</label>
-                    <input class="col-sm-2" type="text" [(ngModel)]="acc.city" name="city" style="font-size: 12px" placeholder="City">
+                    <input class="col-sm-2" type="text" [(ngModel)]="loc.city" name="city" style="font-size: 12px" >
                 </div>
                 <div class="form-group ">
                     <label class="col-sm-2" for="Address">Address:</label>
-                    <input class="col-sm-2" type="text" [(ngModel)]="acc.address" name="address" style="font-size: 12px" placeholder="Address">
+                    <input class="col-sm-2" type="text" [(ngModel)]="loc.address" name="address" style="font-size: 12px" >
                 </div>
                 <div class="row"></div>
                 
                 <legend style="margin-left: 12px;">Additional services</legend>
                 <div style="margin-left: 12px;" class="form-group">
                   <div class="form-check">
-                    <input class="form-check-input" [(ngModel)]="acc.wiFi" name="wiFi" type="checkbox" id="gridCheck">
+                    <input class="form-check-input" [(ngModel)]="adds.wiFi" name="wiFi" type="checkbox" id="gridCheck">
                     <label class="form-check-label" for="gridCheck">
                        WiFi
                     </label>
@@ -73,7 +73,7 @@
                 </div>
                 <div style="margin-left: 12px;" class="form-group">
                   <div class="form-check">
-                    <input class="form-check-input" [(ngModel)]="acc.tv" name="tv" type="checkbox" id="gridCheck">
+                    <input class="form-check-input" [(ngModel)]="adds.tv" name="tv" type="checkbox" id="gridCheck">
                     <label class="form-check-label" for="gridCheck">
                       TV
                     </label>
@@ -81,7 +81,7 @@
                 </div>
                 <div style="margin-left: 12px;" class="form-group">
                   <div class="form-check">
-                    <input class="form-check-input" [(ngModel)]="acc.parking" name="parking" type="checkbox" id="gridCheck">
+                    <input class="form-check-input" [(ngModel)]="adds.parking" name="parking" type="checkbox" id="gridCheck">
                     <label class="form-check-label" for="gridCheck">
                       Parking
                     </label>
@@ -89,7 +89,7 @@
                 </div>
                 <div style="margin-left: 12px;" class="form-group">
                   <div class="form-check">
-                    <input class="form-check-input" [(ngModel)]="acc.kitchen" name="kitchen" type="checkbox" id="gridCheck">
+                    <input class="form-check-input" [(ngModel)]="adds.kitchen" name="kitchen" type="checkbox" id="gridCheck">
                     <label class="form-check-label" for="gridCheck">
                       Kitchen
                     </label>
@@ -97,7 +97,7 @@
                 </div>
                 <div style="margin-left: 12px;" class="form-group">
                   <div class="form-check">
-                    <input class="form-check-input" [(ngModel)]="acc.breakfast" name="breakfast" type="checkbox" id="gridCheck">
+                    <input class="form-check-input" [(ngModel)]="adds.breakfast" name="breakfast" type="checkbox" id="gridCheck">
                     <label class="form-check-label" for="gridCheck">
                       Breakfast
                     </label>
@@ -105,7 +105,7 @@
                 </div>
                 <div style="margin-left: 12px;" class="form-group">
                   <div class="form-check">
-                    <input class="form-check-input" [(ngModel)]="acc.halfBoard" name="halfBoard" type="checkbox" id="gridCheck">
+                    <input class="form-check-input" [(ngModel)]="adds.halfBoard" name="halfBoard" type="checkbox" id="gridCheck">
                     <label class="form-check-label" for="gridCheck">
                       HalfBoard
                     </label>
@@ -113,7 +113,7 @@
                 </div>
                 <div style="margin-left: 12px;" class="form-group">
                   <div class="form-check">
-                    <input class="form-check-input" [(ngModel)]="acc.fullBoard" name="fullBoard" type="checkbox" id="gridCheck">
+                    <input class="form-check-input" [(ngModel)]="adds.fullBoard" name="fullBoard" type="checkbox" id="gridCheck">
                     <label class="form-check-label" for="gridCheck">
                         FullBoard
                     </label>
@@ -121,7 +121,7 @@
                 </div>
                 <div style="margin-left: 12px;" class="form-group">
                   <div class="form-check">
-                    <input class="form-check-input" [(ngModel)]="acc.bathroom" name="bathroom" type="checkbox" id="gridCheck">
+                    <input class="form-check-input" [(ngModel)]="adds.bathroom" name="bathroom" type="checkbox" id="gridCheck">
                     <label class="form-check-label" for="gridCheck">
                         Bathroom
                     </label>
@@ -132,7 +132,7 @@
 
 
                
-                <button style="margin-left: 300px;" type="submit" (click)="addNewAccommodation()" class="btn btn-primary">Submit</button>
+                <button style="margin-left: 300px;" type="submit" (click)="submitAcc(acc.id)" class="btn btn-primary">Submit</button>
               
               
               </form>
