@@ -18,6 +18,8 @@ export class NewaccommodationComponent implements OnInit {
 
   addNewAccommodation(): void{
 
+    console.log(this.accommodation.fivebeds);
+    
     this.accommodationService.newAccommodation(this.accommodation)
     .subscribe(data => this.accommodation = data);
 

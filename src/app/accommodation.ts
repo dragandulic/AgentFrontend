@@ -22,9 +22,11 @@ export class Accommodation{
 	city: string; 
 	address: string; 
 	idAgent: number;
-
-
-
-
-
+	twobeds: number;
+	theerebeds: number;
+	fourbeds: number;
+	fivebeds: number;
+	onebeds: number;
+	reservedFrom: string;
+	reservedTo: string;
 }

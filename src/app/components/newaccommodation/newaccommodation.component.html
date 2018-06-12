@@ -104,11 +104,69 @@
                       </label>
                     </div>
                   </div>
-                  <button style="margin-left: 300px;" type="submit" (click)="addNewAccommodation()" class="btn btn-primary">Submit</button>
+                  <legend style="margin-left: 12px;">Rooms</legend>
+                  <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Add rooms</button>
+                  <div class="row">
+                    <div class="col-sm-2"><button style="margin-left: 300px;" type="submit" (click)="addNewAccommodation()" class="btn btn-primary">Submit</button></div>
+                    <div class="col-*-*"></div>
+                  </div>
+                  
+                  
 
 
 </form>
 
+
+<div class="modal" tabindex="-1" id="myModal" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Add rooms</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <div class="row">          
+              <label class="col-sm-4">One beds:</label>
+              <input class="col-sm-2" type="text" name="fivebads" [(ngModel)]="accommodation.onebeds">         
+           
+          </div>
+        
+        <div class="row">          
+            <label class="col-sm-4">Two beds:</label>
+            <input class="col-sm-2" type="text" name="twobads" [(ngModel)]="accommodation.twobeds">         
+            
+        </div>
+
+        <div class="row">          
+            <label class="col-sm-4">Theere beds:</label>
+            <input class="col-sm-2" type="text" name="theerebads" [(ngModel)]="accommodation.theerebeds">         
+         
+        </div>
+
+        <div class="row">          
+            <label class="col-sm-4">Four beds:</label>
+            <input class="col-sm-2" type="text" name="fourbads" [(ngModel)]="accommodation.fourbeds">         
+         
+        </div>
+
+        <div class="row">          
+            <label class="col-sm-4">Five beds:</label>
+            <input class="col-sm-2" type="text" name="fivebads" [(ngModel)]="accommodation.fivebeds">         
+         
+        </div>
+
+
+
+      </div>
+      <div class="modal-footer">
+        
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 </div>

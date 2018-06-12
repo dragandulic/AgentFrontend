@@ -17,13 +17,16 @@ export class MineaccommodationComponent implements OnInit {
   loc: Location;
   adds: AdditionalServices;
   accom: Accommodation;
+  showEdit: boolean;
+  reserveAccommodation: any={};
+
 
   constructor(private accommodationService: AccommodationService) { }
 
   ngOnInit() {
+    this.showEdit=false;
     this.accommodationService.mineAccommodation(1)
     .subscribe(data =>{this.accommodations=data;
-
 
     });
   }
@@ -46,6 +49,7 @@ export class MineaccommodationComponent implements OnInit {
       
      
     });
+    this.showEdit = true;
   }
 
   submitAcc(id){
@@ -74,6 +78,23 @@ export class MineaccommodationComponent implements OnInit {
 
   deleteAcc(id){
     console.log(id);
+  }
+
+  setreserve(id): void{
+    
+    this.reserveAccommodation.idAccommodation = id;
+    this.reserveAccommodation.reservedFrom = null;
+    this.reserveAccommodation.reservedTo = null;
+
+  }
+
+
+  reserveAcc(): void{
+
+    
+    this.accommodationService.reserveAccommodation(this.reserveAccommodation)
+    .subscribe(data =>this.reserveAccommodation = data);
+
   }
 
 }

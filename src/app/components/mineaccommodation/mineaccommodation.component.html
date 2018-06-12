@@ -15,6 +15,7 @@
                     <div>
                       <button class="btn btn-primary" id="{{accommodation.id}}" (click)="editAcc(accommodation.id)">Edit</button>
                       <button class="btn btn-primary" id="{{accommodation.id}}" (click)="deleteAcc(accommodation.id)">Delete</button>
+                      <button class="btn btn-primary" id="{{accommodation.id}}" (click)="setreserve(accommodation.id)" data-toggle="modal" data-target="#myModal">Reserve</button>
                     </div>
                   </li>
           
@@ -142,3 +143,40 @@
       
     </div>
   </div>
+
+
+
+
+  <div class="modal" tabindex="-1" id="myModal" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Add rooms</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+              <div class="row">          
+                  <label class="col-sm-4">Reserve from:</label>
+                  <input class="col-sm-6" type="text" name="reservefrom" [(ngModel)]="reserveAccommodation.reservedFrom" placeholder="yyyy-mm-dd hh:mm:ss">         
+               
+              </div>
+              
+              <div class="row" style="margin-top: 10px;">          
+                  <label class="col-sm-4">Reserve to:</label>
+                  <input class="col-sm-6" type="text" name="reserveto" [(ngModel)]="reserveAccommodation.reservedTo" placeholder="yyyy-mm-dd hh:mm:ss">         
+               
+              </div>
+            
+    
+    
+          </div>
+          <div class="modal-footer">
+            
+              <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="reserveAcc()">Ok</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>

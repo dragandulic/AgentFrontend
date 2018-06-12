@@ -48,4 +48,12 @@ export class AccommodationService {
     return this.http.put<any>('http://localhost:8086/accommodation/editAccommodation/'+id, accommodation,httpOptions);
 
   }
+
+
+  reserveAccommodation(accommodationDTO: Accommodation): Observable<any>{
+
+    return this.http.put<any>('http://localhost:8086/accommodation/reserveaccommodation',accommodationDTO,httpOptions);
+
+  }
+
 }
