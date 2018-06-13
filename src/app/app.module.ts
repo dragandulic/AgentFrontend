@@ -14,6 +14,8 @@ import { MineaccommodationComponent } from './components/mineaccommodation/minea
 import { Accommodation } from './accommodation';
 import { AccommodationService } from './services/accommodation/accommodation.service';
 
+import {MatListModule} from '@angular/material/list';
+import { AdditionalserivcesService } from './services/additionalservices/additionalserivces.service';
 
 @NgModule({
   declarations: [
@@ -29,9 +31,10 @@ import { AccommodationService } from './services/accommodation/accommodation.ser
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatListModule
   ],
-  providers: [AgentService,AccommodationService],
+  providers: [AgentService,AccommodationService,AdditionalserivcesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

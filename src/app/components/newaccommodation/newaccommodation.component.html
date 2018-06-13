@@ -40,70 +40,17 @@
   <div class="row"></div>
  
   <legend style="margin-left: 12px;">Additional services</legend>
-  <div style="margin-left: 12px;" class="form-group">
-      <div class="form-check">
-        <input class="form-check-input" [(ngModel)]="accommodation.wiFi" name="wiFi" type="checkbox" id="gridCheck">
-        <label class="form-check-label" for="gridCheck">
-          WiFi
-        </label>
-      </div>
-    </div>
-    <div style="margin-left: 12px;" class="form-group">
-        <div class="form-check">
-          <input class="form-check-input" [(ngModel)]="accommodation.tv" name="tv" type="checkbox" id="gridCheck">
-          <label class="form-check-label" for="gridCheck">
-            TV
-          </label>
-        </div>
-      </div>
-      <div style="margin-left: 12px;" class="form-group">
-          <div class="form-check">
-            <input class="form-check-input" [(ngModel)]="accommodation.parking" name="parking" type="checkbox" id="gridCheck">
-            <label class="form-check-label" for="gridCheck">
-              Parking
-            </label>
-          </div>
-        </div>
-        <div style="margin-left: 12px;" class="form-group">
-            <div class="form-check">
-              <input class="form-check-input" [(ngModel)]="accommodation.kitchen" name="kitchen" type="checkbox" id="gridCheck">
-              <label class="form-check-label" for="gridCheck">
-                Kitchen
-              </label>
-            </div>
-          </div>
-          <div style="margin-left: 12px;" class="form-group">
-              <div class="form-check">
-                <input class="form-check-input" [(ngModel)]="accommodation.breakfast" name="breakfast" type="checkbox" id="gridCheck">
-                <label class="form-check-label" for="gridCheck">
-                    Breakfast
-                </label>
-              </div>
-            </div>
-            <div style="margin-left: 12px;" class="form-group">
-                <div class="form-check">
-                  <input class="form-check-input" [(ngModel)]="accommodation.halfBoard" name="halfBoard" type="checkbox" id="gridCheck">
-                  <label class="form-check-label" for="gridCheck">
-                      HalfBoard
-                  </label>
-                </div>
-              </div>
-              <div style="margin-left: 12px;" class="form-group">
-                  <div class="form-check">
-                    <input class="form-check-input" [(ngModel)]="accommodation.fullBoard" name="fullBoard" type="checkbox" id="gridCheck">
-                    <label class="form-check-label" for="gridCheck">
-                        FullBoard
-                    </label>
-                  </div>
-                </div>
-                <div style="margin-left: 12px;" class="form-group">
-                    <div class="form-check">
-                      <input class="form-check-input" [(ngModel)]="accommodation.bathroom" name="bathroom" type="checkbox" id="gridCheck">
-                      <label class="form-check-label" for="gridCheck">
-                          Bathroom
-                      </label>
-                    </div>
-                  </div>
+  
+
+  <mat-selection-list #shoes>
+    <mat-list-option *ngFor="let shoe of additionalSer">
+      {{shoe}}
+    
+    </mat-list-option>
+  </mat-selection-list>
+
+
+
                   <legend style="margin-left: 12px;">Rooms</legend>
                   <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Add rooms</button>
                   <div class="row">
