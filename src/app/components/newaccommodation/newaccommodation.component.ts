@@ -41,4 +41,11 @@ export class NewaccommodationComponent implements OnInit {
     this.accommodation.type =  event.target.value;
   }
 
+
+  onSelectOptionChange(value: any) {
+    console.log("aaaaaaaaa");
+    console.log(value.target.value);
+  }
+
+
 }

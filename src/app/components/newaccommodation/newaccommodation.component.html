@@ -24,7 +24,7 @@
       <textarea class="form-control col-sm-2 d-inline" [(ngModel)]="accommodation.description" name="description" style="margin-left: 70px; font-size: 11px;" rows="2"  id="comment"></textarea>
       
   </div>
-  <legend style="margin-left: 12px;">Location</legend>
+  <legend style="margin-left: 12px;">Location:</legend>
   <div class="form-group ">
       <label class="col-sm-2" for="Country">Country:</label>
       <input class="col-sm-2" type="text" [(ngModel)]="accommodation.country" name="country" style="font-size: 12px" placeholder="Country">
@@ -39,24 +39,24 @@
   </div>
   <div class="row"></div>
  
-  <legend style="margin-left: 12px;">Additional services</legend>
+  <legend style="margin-left: 12px;">Additional services:</legend>
   
-
-  <mat-selection-list #shoes>
-    <mat-list-option *ngFor="let shoe of additionalSer">
-      {{shoe}}
+  <div class="row">
+    <mat-selection-list class="col-sm-4" #shoes>
+     <mat-list-option *ngFor="let shoe of additionalSer" (selectChange)="onSelectOptionChange(shoe)">
+       {{shoe}}
     
-    </mat-list-option>
-  </mat-selection-list>
+     </mat-list-option>
+    </mat-selection-list>
+  </div>
 
 
-
-                  <legend style="margin-left: 12px;">Rooms</legend>
-                  <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Add rooms</button>
-                  <div class="row">
-                    <div class="col-sm-2"><button style="margin-left: 300px;" type="submit" (click)="addNewAccommodation()" class="btn btn-primary">Submit</button></div>
-                    <div class="col-*-*"></div>
-                  </div>
+  <legend style="margin-left: 12px;">Rooms:</legend>
+  <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Add rooms</button>
+    <div class="row">
+      <div class="col-sm-2"><button style="margin-left: 300px;" type="submit" (click)="addNewAccommodation()" class="btn btn-primary">Submit</button></div>
+      <div class="col-*-*"></div>
+    </div>
                   
                   
 
