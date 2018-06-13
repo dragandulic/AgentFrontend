@@ -8,4 +8,7 @@ export class AdditionalServices{
     halfBoard: boolean;
     fullBoard: boolean;
     bathroom: boolean;
+
+    
+
 }

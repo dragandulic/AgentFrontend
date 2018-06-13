@@ -12,7 +12,7 @@ export class NewaccommodationComponent implements OnInit {
 
   accommodation: any={};
   additionalSer: string[];
-
+  selectedOptions: any;
 
   constructor(private accommodationService: AccommodationService,
      private additionalService: AdditionalserivcesService) { }
@@ -42,9 +42,11 @@ export class NewaccommodationComponent implements OnInit {
   }
 
 
-  onSelectOptionChange(value: any) {
+  onSelectOptionChange(list: any) {
     console.log("aaaaaaaaa");
-    console.log(value.target.value);
+    this.selectedOptions = list.selectedOptions.selected.map(item => item.value);
+    console.log(this.selectedOptions);
+    
   }
 
 

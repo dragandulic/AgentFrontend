@@ -20,7 +20,7 @@ export class Accommodation{
 	idLocation: number; 
 	country: string; 
 	city: string; 
-	address: string; 
+	address: string;
 	idAgent: number;
 	twobeds: number;
 	theerebeds: number;

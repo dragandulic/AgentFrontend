@@ -42,8 +42,8 @@
   <legend style="margin-left: 12px;">Additional services:</legend>
   
   <div class="row">
-    <mat-selection-list class="col-sm-4" #shoes>
-     <mat-list-option *ngFor="let shoe of additionalSer" (selectChange)="onSelectOptionChange(shoe)">
+    <mat-selection-list class="col-sm-4" #list>
+     <mat-list-option *ngFor="let shoe of additionalSer" [selected]="shoe.selected" [value]="shoe" (click)="onSelectOptionChange(list)">
        {{shoe}}
     
      </mat-list-option>
