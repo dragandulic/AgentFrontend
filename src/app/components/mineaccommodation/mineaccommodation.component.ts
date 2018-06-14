@@ -3,6 +3,7 @@ import {  AccommodationDTO } from '../../accommodation';
 import { Location } from '../../location';
 import { AccommodationService } from '../../services/accommodation/accommodation.service';
 import { AdditionalServices } from '../../additionalServices';
+import { AdditionalserivcesService } from '../../services/additionalservices/additionalserivces.service';
 
 @Component({
   selector: 'app-mineaccommodation',
@@ -19,9 +20,11 @@ export class MineaccommodationComponent implements OnInit {
   accom: AccommodationDTO;
   showEdit: boolean;
   reserveAccommodation: any={};
+  additionalSer: string[];
+  selectedOptions: any;
 
 
-  constructor(private accommodationService: AccommodationService) { }
+  constructor(private accommodationService: AccommodationService, private additionalService: AdditionalserivcesService) { }
 
   ngOnInit() {
     this.showEdit=false;
@@ -43,13 +46,22 @@ export class MineaccommodationComponent implements OnInit {
      
 
     });
-    this.accommodationService.findAS(id)
-    .subscribe(data=>{this.adds=data;
-      
-      
-     
+
+    this.additionalService.getServices()
+    .subscribe(data => {this.additionalSer=data;
+    
+
     });
+    
     this.showEdit = true;
+  }
+
+
+
+  onSelectOptionChange(list: any) {
+    
+    this.selectedOptions = list.selectedOptions.selected.map(item => item.value);
+
   }
 
   submitAcc(id){
@@ -57,14 +69,7 @@ export class MineaccommodationComponent implements OnInit {
     this.acc.city=this.loc.city;
     this.acc.address=this.loc.address;
       
-    this.acc.wiFi=this.adds.wiFi;
-    this.acc.tv=this.adds.tv;
-    this.acc.parking=this.adds.parking;
-    this.acc.kitchen=this.adds.kitchen;
-    this.acc.breakfast=this.adds.breakfast;
-    this.acc.halfBoard=this.adds.halfBoard;
-    this.acc.fullBoard=this.adds.fullBoard;
-    this.acc.bathroom=this.adds.bathroom;
+    this.acc.aditionalServices=this.selectedOptions;
     
     this.accommodationService.editAccommodation(id,this.acc)
     .subscribe(data=> {this.accom=data;

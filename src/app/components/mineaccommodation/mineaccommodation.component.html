@@ -25,7 +25,7 @@
       </div>
       
       <div class="col position1" >
-          <div *ngIf="acc && loc && adds"  class="container bg-light" style="margin-top: 14px; margin-bottom: 50px;">
+          <div *ngIf="acc && loc"  class="container bg-light" style="margin-top: 14px; margin-bottom: 50px;">
 
               <form  action="">
               
@@ -37,7 +37,7 @@
                 <div class="form-group ">
                     <label class="col-sm-2" for="Name">Type:</label>
                     <select id="type" (change)="selectChangeHandler($event)" name="type" style="font-size: 13px" class="col-sm-2">
-                        <option selected>Choose...</option>
+                        <option class="option0" value="0" selected hidden>Choose ...</option>
                         <option value="Hotel">Hotel</option>
                         <option value="Bad&breakfast">Bad&breakfast</option>
                         <option value="Apartman">Apartman</option>
@@ -48,7 +48,7 @@
                     <textarea class="form-control col-sm-2 d-inline" [(ngModel)]="acc.description" name="description" style="margin-left: 70px; font-size: 11px;" rows="2"  id="comment"></textarea>
                     
                 </div>
-                <legend style="margin-left: 12px;">Location</legend>
+                <legend style="margin-left: 12px;">Location:</legend>
                 <div class="form-group ">
                     <label class="col-sm-2" for="Country">Country:</label>
                     <input class="col-sm-2" type="text" [(ngModel)]="loc.country" name="country" style="font-size: 12px" >
@@ -63,76 +63,17 @@
                 </div>
                 <div class="row"></div>
                 
-                <legend style="margin-left: 12px;">Additional services</legend>
-                <div style="margin-left: 12px;" class="form-group">
-                  <div class="form-check">
-                    <input class="form-check-input" [(ngModel)]="adds.wiFi" name="wiFi" type="checkbox" id="gridCheck">
-                    <label class="form-check-label" for="gridCheck">
-                       WiFi
-                    </label>
-                  </div>
+                <legend style="margin-left: 12px;">Additional services:</legend>
+                
+                <div class="row">
+                  <mat-selection-list class="col-sm-4" #list>
+                   <mat-list-option *ngFor="let shoe of additionalSer" [selected]="shoe.selected" [value]="shoe" (click)="onSelectOptionChange(list)">
+                     {{shoe}}
+                  
+                   </mat-list-option>
+                  </mat-selection-list>
                 </div>
-                <div style="margin-left: 12px;" class="form-group">
-                  <div class="form-check">
-                    <input class="form-check-input" [(ngModel)]="adds.tv" name="tv" type="checkbox" id="gridCheck">
-                    <label class="form-check-label" for="gridCheck">
-                      TV
-                    </label>
-                  </div>
-                </div>
-                <div style="margin-left: 12px;" class="form-group">
-                  <div class="form-check">
-                    <input class="form-check-input" [(ngModel)]="adds.parking" name="parking" type="checkbox" id="gridCheck">
-                    <label class="form-check-label" for="gridCheck">
-                      Parking
-                    </label>
-                  </div>
-                </div>
-                <div style="margin-left: 12px;" class="form-group">
-                  <div class="form-check">
-                    <input class="form-check-input" [(ngModel)]="adds.kitchen" name="kitchen" type="checkbox" id="gridCheck">
-                    <label class="form-check-label" for="gridCheck">
-                      Kitchen
-                    </label>
-                  </div>
-                </div>
-                <div style="margin-left: 12px;" class="form-group">
-                  <div class="form-check">
-                    <input class="form-check-input" [(ngModel)]="adds.breakfast" name="breakfast" type="checkbox" id="gridCheck">
-                    <label class="form-check-label" for="gridCheck">
-                      Breakfast
-                    </label>
-                  </div>
-                </div>
-                <div style="margin-left: 12px;" class="form-group">
-                  <div class="form-check">
-                    <input class="form-check-input" [(ngModel)]="adds.halfBoard" name="halfBoard" type="checkbox" id="gridCheck">
-                    <label class="form-check-label" for="gridCheck">
-                      HalfBoard
-                    </label>
-                  </div>
-                </div>
-                <div style="margin-left: 12px;" class="form-group">
-                  <div class="form-check">
-                    <input class="form-check-input" [(ngModel)]="adds.fullBoard" name="fullBoard" type="checkbox" id="gridCheck">
-                    <label class="form-check-label" for="gridCheck">
-                        FullBoard
-                    </label>
-                  </div>
-                </div>
-                <div style="margin-left: 12px;" class="form-group">
-                  <div class="form-check">
-                    <input class="form-check-input" [(ngModel)]="adds.bathroom" name="bathroom" type="checkbox" id="gridCheck">
-                    <label class="form-check-label" for="gridCheck">
-                        Bathroom
-                    </label>
-                  </div>
-                </div>
-
-
-
-
-               
+                              
                 <button style="margin-left: 300px;" type="submit" (click)="submitAcc(acc.id)" class="btn btn-primary">Submit</button>
               
               
