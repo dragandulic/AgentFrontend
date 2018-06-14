@@ -1,4 +1,4 @@
-export class Accommodation{
+export class AccommodationDTO{
 
 	id: number;
     idAccommodation: number;
@@ -29,4 +29,5 @@ export class Accommodation{
 	onebeds: number;
 	reservedFrom: string;
 	reservedTo: string;
+	aditionalServices: any;
 }

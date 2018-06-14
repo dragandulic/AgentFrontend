@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import { Accommodation } from '../../accommodation';
+import { AccommodationDTO } from '../../accommodation';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -13,7 +13,7 @@ export class AccommodationService {
   constructor(private http: HttpClient) { }
 
 
-  newAccommodation(acc : Accommodation): Observable<any>{
+  newAccommodation(acc : AccommodationDTO): Observable<any>{
 
     return this.http.post<any>('http://localhost:8086/accommodation/addAccommodation', acc, httpOptions);
 
@@ -43,14 +43,14 @@ export class AccommodationService {
 
   }
 
-  editAccommodation(id,accommodation: Accommodation): Observable<any>{
+  editAccommodation(id,accommodation: AccommodationDTO): Observable<any>{
 
     return this.http.put<any>('http://localhost:8086/accommodation/editAccommodation/'+id, accommodation,httpOptions);
 
   }
 
 
-  reserveAccommodation(accommodationDTO: Accommodation): Observable<any>{
+  reserveAccommodation(accommodationDTO: AccommodationDTO): Observable<any>{
 
     return this.http.put<any>('http://localhost:8086/accommodation/reserveaccommodation',accommodationDTO,httpOptions);
 

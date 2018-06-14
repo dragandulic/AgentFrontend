@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Accommodation } from '../../accommodation';
+import {  AccommodationDTO } from '../../accommodation';
 import { Location } from '../../location';
 import { AccommodationService } from '../../services/accommodation/accommodation.service';
 import { AdditionalServices } from '../../additionalServices';
@@ -11,12 +11,12 @@ import { AdditionalServices } from '../../additionalServices';
 })
 export class MineaccommodationComponent implements OnInit {
 
-  accommodations: Accommodation[];
+  accommodations: AccommodationDTO[];
   accommodation1: any={};
-  acc: Accommodation;
+  acc: AccommodationDTO;
   loc: Location;
   adds: AdditionalServices;
-  accom: Accommodation;
+  accom: AccommodationDTO;
   showEdit: boolean;
   reserveAccommodation: any={};
 

@@ -30,7 +30,7 @@ export class NewaccommodationComponent implements OnInit {
 
   addNewAccommodation(): void{
 
-    console.log(this.accommodation.fivebeds);
+    this.accommodation.aditionalServices = this.selectedOptions;
     
     this.accommodationService.newAccommodation(this.accommodation)
     .subscribe(data => this.accommodation = data);
@@ -43,10 +43,9 @@ export class NewaccommodationComponent implements OnInit {
 
 
   onSelectOptionChange(list: any) {
-    console.log("aaaaaaaaa");
-    this.selectedOptions = list.selectedOptions.selected.map(item => item.value);
-    console.log(this.selectedOptions);
     
+    this.selectedOptions = list.selectedOptions.selected.map(item => item.value);
+
   }
 
 

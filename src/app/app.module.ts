@@ -11,7 +11,7 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { AgentService } from './services/agent/agent.service';
 import { NewaccommodationComponent } from './components/newaccommodation/newaccommodation.component';
 import { MineaccommodationComponent } from './components/mineaccommodation/mineaccommodation.component';
-import { Accommodation } from './accommodation';
+import { AccommodationDTO } from './accommodation';
 import { AccommodationService } from './services/accommodation/accommodation.service';
 
 import {MatListModule} from '@angular/material/list';
