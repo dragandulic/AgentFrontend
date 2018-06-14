@@ -16,6 +16,7 @@ import { AccommodationService } from './services/accommodation/accommodation.ser
 
 import {MatListModule} from '@angular/material/list';
 import { AdditionalserivcesService } from './services/additionalservices/additionalserivces.service';
+import { PriceplanComponent } from './components/priceplan/priceplan.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { AdditionalserivcesService } from './services/additionalservices/additio
     LoginComponent,
     RegistrationComponent,
     NewaccommodationComponent,
-    MineaccommodationComponent
+    MineaccommodationComponent,
+    PriceplanComponent
   ],
   imports: [
     BrowserModule,

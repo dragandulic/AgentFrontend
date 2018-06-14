@@ -5,7 +5,7 @@
 <div class="container bg-light" style="margin-top: 14px; margin-bottom: 50px;">
 
 <form  action="">
-
+  <legend style="margin-left: 12px;">Basic info:</legend>
   <div class="form-group ">
     <label class="col-sm-2" for="Name">Name:</label>
     <input class="col-sm-2" type="text" [(ngModel)]="accommodation.name" name="name" style="font-size: 12px" placeholder="Name">
@@ -37,6 +37,7 @@
       <label class="col-sm-2" for="Address">Address:</label>
       <input class="col-sm-2" type="text" [(ngModel)]="accommodation.address" name="address" style="font-size: 12px" placeholder="Address">
   </div>
+
   <div class="row"></div>
  
   <legend style="margin-left: 12px;">Additional services:</legend>
@@ -50,6 +51,16 @@
     </mat-selection-list>
   </div>
 
+  <legend style="margin-left: 12px;">Price plan:</legend>
+  <div class="row">
+    <div class="col">
+
+
+    </div>
+  </div>
+
+
+
 
   <legend style="margin-left: 12px;">Rooms:</legend>
   <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Add rooms</button>
@@ -62,7 +73,7 @@
 
 
 </form>
-
+</div>
 
 <div class="modal" tabindex="-1" id="myModal" role="dialog">
   <div class="modal-dialog" role="document">
@@ -116,4 +127,3 @@
 </div>
 
 
-</div>

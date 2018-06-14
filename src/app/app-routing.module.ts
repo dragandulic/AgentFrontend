@@ -6,6 +6,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { NewaccommodationComponent } from './components/newaccommodation/newaccommodation.component';
 import { MineaccommodationComponent } from './components/mineaccommodation/mineaccommodation.component';
+import { PriceplanComponent } from './components/priceplan/priceplan.component';
 
 const routes: Routes = [
 
@@ -17,7 +18,8 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent,
      children:[
         { path: 'newaccommodation', component: NewaccommodationComponent},
-        { path: 'mineaccommodation', component: MineaccommodationComponent}
+        { path: 'mineaccommodation', component: MineaccommodationComponent},
+        { path: 'priceplan', component: PriceplanComponent}
      ]
     
   }
