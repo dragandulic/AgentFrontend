@@ -1,0 +1,31 @@
+
+
+<div class="container-fluid">
+    
+  <div class="row ">
+    <div class="col position bg-light" style="background-color:rgb(206, 206, 248);">
+        <ul *ngFor="let accommodation of accommodations">
+            <div>
+                <li>
+                  <p class="html">Hotel: {{accommodation.name}} <br>
+                  Type: {{accommodation.type}} <br>
+                  Description: {{accommodation.description}} <br>
+                 
+                  </p>
+                  <div>
+                    <input type="file" onchange="document.getElementById('blah').src = window.URL.createObjectURL(this.files[0])">
+                    <img id="blah" alt="your image" width="100" height="100" />
+                  </div>
+                </li>
+        
+            </div>
+        
+          </ul>
+    </div>
+    
+    <div class="col position1" >
+        
+    </div>
+    
+  </div>
+</div>

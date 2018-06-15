@@ -18,6 +18,7 @@ import {MatListModule} from '@angular/material/list';
 import { AdditionalserivcesService } from './services/additionalservices/additionalserivces.service';
 import { PriceplanComponent } from './components/priceplan/priceplan.component';
 import { RoomService } from './services/room/room.service';
+import { PicturesComponent } from './components/pictures/pictures.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { RoomService } from './services/room/room.service';
     RegistrationComponent,
     NewaccommodationComponent,
     MineaccommodationComponent,
-    PriceplanComponent
+    PriceplanComponent,
+    PicturesComponent
   ],
   imports: [
     BrowserModule,

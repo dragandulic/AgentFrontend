@@ -7,6 +7,7 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { NewaccommodationComponent } from './components/newaccommodation/newaccommodation.component';
 import { MineaccommodationComponent } from './components/mineaccommodation/mineaccommodation.component';
 import { PriceplanComponent } from './components/priceplan/priceplan.component';
+import { PicturesComponent } from './components/pictures/pictures.component';
 
 const routes: Routes = [
 
@@ -19,7 +20,8 @@ const routes: Routes = [
      children:[
         { path: 'newaccommodation', component: NewaccommodationComponent},
         { path: 'mineaccommodation', component: MineaccommodationComponent},
-        { path: 'priceplan', component: PriceplanComponent}
+        { path: 'priceplan', component: PriceplanComponent},
+        { path: 'pictures', component: PicturesComponent}
      ]
     
   }
