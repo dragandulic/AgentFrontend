@@ -1,15 +1,25 @@
 <div class="container-fluid ">
 
-  <div class="row" style="margin-top: 20px;"></div>
+  <div class="row" style="margin-top: 20px; "></div>
 
   <div class="row">
 
-    <div class="col bg-light">
+    <div class="col-md-5 bg-light" style="margin-bottom: 50px;">
 
       <ul class="list-group" style="padding-top: 29px; padding-left: 14px; padding-right: 14px; padding-bottom: 30px;">
         <li class="list-group-item" *ngFor="let accommodation of Accommodations" >
-          {{accommodation.name}}
-          <button class="btn btn-primary" id="{{accommodation.id}}" (click)="getRoomsOfAccommodation(accommodation.id)">Add price</button>
+          <div class="row">
+
+          
+            <div class="col-md-9">
+            {{accommodation.name}}
+          </div>
+            
+          <div class="col-md-3">
+            <button class="btn btn-outline-primary" style="margin-right: 30px;" id="{{accommodation.id}}" (click)="getRoomsOfAccommodation(accommodation.id)">Add prices</button>
+
+          </div>
+        </div>
         </li>
         
       </ul>
@@ -17,57 +27,71 @@
 
     <div class="col-md-1"></div>
 
-    <div class="col bg-light" >
+    <div *ngIf="typesOfRoom" class="col bg-light" style="margin-bottom: 50px;" >
+
+        <div class="row" style="padding-top: 20px; padding-left: 14px; padding-right:  14px;">
+            <label class="col-md-3">Type of room:</label>
+            <select id="type" (change)="selectChangeHandler($event)" name="type" style="font-size: 13px" class="col-sm-2">
+                <option class="option0" value="0" selected hidden>Choose ...</option>
+                <option  *ngFor="let roomm of typesOfRoom" value={{roomm}}>{{roomm}}</option>
+                
+            </select>
+        </div>
+
       
       <div class="row" style="padding-top: 20px; padding-left: 14px; padding-right:  14px;">
         <label class="col-md-2">January:</label>
-        <input type="text" class="col-md-4">
+        <input type="text" class="col-md-4" [(ngModel)]="pricaPlan.january" #clean1 placeholder="price">
       </div>
       <div class="row" style="padding-top: 20px; padding-left: 14px; padding-right:  14px;">
           <label class="col-md-2">February:</label>
-          <input type="text" class="col-md-4">
+          <input type="text" class="col-md-4" [(ngModel)]="pricaPlan.february" #clean2 placeholder="price">
       </div>  
-      <div class="row" style="padding-top: 20px; padding-left: 14px; padding-right:  14px;">
+      <div class="row" style="padding-top: 20px; padding-left: 14px; padding-right:  14px;" >
           <label class="col-md-2">March:</label>
-          <input type="text" class="col-md-4">
+          <input type="text" class="col-md-4" [(ngModel)]="pricaPlan.march" #clean3 placeholder="price">
       </div>
       <div class="row" style="padding-top: 20px; padding-left: 14px; padding-right:  14px;">
           <label class="col-md-2">April:</label>
-          <input type="text" class="col-md-4">
+          <input type="text" class="col-md-4" [(ngModel)]="pricaPlan.april" #clean4 placeholder="price">
       </div> 
       <div class="row" style="padding-top: 20px; padding-left: 14px; padding-right:  14px;">
           <label class="col-md-2">May:</label>
-          <input type="text" class="col-md-4">
+          <input type="text" class="col-md-4" [(ngModel)]="pricaPlan.may" #clean5 placeholder="price">
       </div> 
       <div class="row" style="padding-top: 20px; padding-left: 14px; padding-right:  14px;">
           <label class="col-md-2">June:</label>
-          <input type="text" class="col-md-4">
+          <input type="text" class="col-md-4" [(ngModel)]="pricaPlan.june" #clean6 placeholder="price">
       </div> 
       <div class="row" style="padding-top: 20px; padding-left: 14px; padding-right:  14px;">
           <label class="col-md-2">July:</label>
-          <input type="text" class="col-md-4">
+          <input type="text" class="col-md-4" [(ngModel)]="pricaPlan.july" #clean7 placeholder="price">
       </div> 
       <div class="row" style="padding-top: 20px; padding-left: 14px; padding-right:  14px;">
           <label class="col-md-2">August:</label>
-          <input type="text" class="col-md-4">
+          <input type="text" class="col-md-4" [(ngModel)]="pricaPlan.august" #clean8 placeholder="price">
       </div> 
       <div class="row" style="padding-top: 20px; padding-left: 14px; padding-right:  14px;">
           <label class="col-md-2">September:</label>
-          <input type="text" class="col-md-4">
+          <input type="text" class="col-md-4" [(ngModel)]="pricaPlan.september" #clean9 placeholder="price">
       </div> 
       <div class="row" style="padding-top: 20px; padding-left: 14px; padding-right:  14px;">
           <label class="col-md-2">October:</label>
-          <input type="text" class="col-md-4">
+          <input type="text" class="col-md-4" [(ngModel)]="pricaPlan.october" #clean10 placeholder="price">
       </div> 
       <div class="row" style="padding-top: 20px; padding-left: 14px; padding-right:  14px;">
           <label class="col-md-2">November:</label>
-          <input type="text" class="col-md-4">
+          <input type="text" class="col-md-4" [(ngModel)]="pricaPlan.november" #clean11 placeholder="price">
       </div> 
       <div class="row" style="padding-top: 20px; padding-left: 14px; padding-right:  14px;">
           <label class="col-md-2">December:</label>
-          <input type="text" class="col-md-4">
+          <input type="text" class="col-md-4" [(ngModel)]="pricaPlan.december" #clean12 placeholder="price">
       </div> 
-    
+      <br>
+      <br>
+      <button style="margin-left: 400px; margin-bottom: 15px; " type="submit" (click)="addPricePlan(); clean1.value=''; clean2.value=''; clean3.value=''; clean4.value=''; clean5.value=''; clean6.value=''; clean7.value=''; clean8.value=''; clean9.value=''; clean10.value=''; clean11.value=''; clean12.value=''; " class="btn btn-primary">Add</button>
+      
+
     </div>
 
   </div>

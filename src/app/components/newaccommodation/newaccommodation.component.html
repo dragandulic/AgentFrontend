@@ -24,6 +24,7 @@
       <textarea class="form-control col-sm-2 d-inline" [(ngModel)]="accommodation.description" name="description" style="margin-left: 70px; font-size: 11px;" rows="2"  id="comment"></textarea>
       
   </div>
+  <br>
   <legend style="margin-left: 12px;">Location:</legend>
   <div class="form-group ">
       <label class="col-sm-2" for="Country">Country:</label>
@@ -40,6 +41,7 @@
 
   <div class="row"></div>
  
+  <br>
   <legend style="margin-left: 12px;">Additional services:</legend>
   
   <div class="row">
@@ -54,9 +56,11 @@
 
 
 
-
+  <br>
   <legend style="margin-left: 12px;">Rooms:</legend>
   <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Add rooms</button>
+  <br>
+  <br>
     <div class="row">
       <div class="col-sm-2"><button style="margin-left: 300px;" type="submit" (click)="addNewAccommodation()" class="btn btn-primary">Submit</button></div>
       <div class="col-*-*"></div>
@@ -78,31 +82,40 @@
         </button>
       </div>
       <div class="modal-body">
-          <div class="row">          
+          <div class="row">
+                   
               <label class="col-sm-4">One beds:</label>
               <input class="col-sm-2" type="text" name="fivebads" [(ngModel)]="accommodation.onebeds">         
            
           </div>
         
-        <div class="row">          
+        <br> 
+        <div class="row">   
+                  
             <label class="col-sm-4">Two beds:</label>
             <input class="col-sm-2" type="text" name="twobads" [(ngModel)]="accommodation.twobeds">         
             
         </div>
 
-        <div class="row">          
+        <br>
+        <div class="row">  
+                 
             <label class="col-sm-4">Theere beds:</label>
             <input class="col-sm-2" type="text" name="theerebads" [(ngModel)]="accommodation.theerebeds">         
          
         </div>
 
-        <div class="row">          
+        <br> 
+        <div class="row">  
+                 
             <label class="col-sm-4">Four beds:</label>
             <input class="col-sm-2" type="text" name="fourbads" [(ngModel)]="accommodation.fourbeds">         
          
         </div>
 
-        <div class="row">          
+        <br>   
+        <div class="row">    
+             
             <label class="col-sm-4">Five beds:</label>
             <input class="col-sm-2" type="text" name="fivebads" [(ngModel)]="accommodation.fivebeds">         
          

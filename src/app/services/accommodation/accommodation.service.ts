@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { AccommodationDTO } from '../../accommodation';
+import { priceplanedto } from '../../priceplandto';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -53,6 +54,12 @@ export class AccommodationService {
   reserveAccommodation(accommodationDTO: AccommodationDTO): Observable<any>{
 
     return this.http.put<any>('http://localhost:8086/accommodation/reserveaccommodation',accommodationDTO,httpOptions);
+
+  }
+
+  addPricePlaneForAcc(priceplandto: priceplanedto): Observable<any>{
+
+    return this.http.post<any>('http://localhost:8086/priceplan/addpriceplan', priceplandto,httpOptions );
 
   }
 
