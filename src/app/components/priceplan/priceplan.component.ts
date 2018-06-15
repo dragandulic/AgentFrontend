@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AccommodationService } from '../../services/accommodation/accommodation.service';
 import { AccommodationDTO } from '../../accommodation';
 import { RoomService } from '../../services/room/room.service';
+import { priceplanedto } from '../../priceplandto';
 
 @Component({
   selector: 'app-priceplan',
@@ -12,26 +13,38 @@ export class PriceplanComponent implements OnInit {
 
   Accommodations: AccommodationDTO[];
   typesOfRoom: string[];
-
+  pricaPlan: any={};
+  pricePlann: priceplanedto;
   constructor(private accomodationService: AccommodationService, private roomservice: RoomService) { }
 
   ngOnInit() {
 
     this.accomodationService.mineAccommodation(1)
     .subscribe(data =>{ this.Accommodations = data
-      console.log(this.Accommodations[0]);
+      
     });
   }
 
   
   getRoomsOfAccommodation(id): void{
 
+    this.pricaPlan.idAccommodation = id;
     this.roomservice.getRoomsOfAcc(id)
     .subscribe(data => {this.typesOfRoom = data
       
-      console.log(this.typesOfRoom[0]);
-    
     });
+
+  }
+
+  selectChangeHandler (event : any){
+    this.pricaPlan.roomType =  event.target.value;
+   
+  }
+
+  addPricePlan(): void{
+
+    this.accomodationService.addPricePlaneForAcc(this.pricaPlan)
+    .subscribe(data => this.pricePlann = data);
 
   }
 
