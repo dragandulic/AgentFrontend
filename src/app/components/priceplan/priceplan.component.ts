@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AccommodationService } from '../../services/accommodation/accommodation.service';
 import { AccommodationDTO } from '../../accommodation';
+import { RoomService } from '../../services/room/room.service';
 
 @Component({
   selector: 'app-priceplan',
@@ -10,8 +11,9 @@ import { AccommodationDTO } from '../../accommodation';
 export class PriceplanComponent implements OnInit {
 
   Accommodations: AccommodationDTO[];
+  typesOfRoom: string[];
 
-  constructor(private accomodationService: AccommodationService) { }
+  constructor(private accomodationService: AccommodationService, private roomservice: RoomService) { }
 
   ngOnInit() {
 
@@ -22,6 +24,15 @@ export class PriceplanComponent implements OnInit {
   }
 
   
+  getRoomsOfAccommodation(id): void{
 
+    this.roomservice.getRoomsOfAcc(id)
+    .subscribe(data => {this.typesOfRoom = data
+      
+      console.log(this.typesOfRoom[0]);
+    
+    });
+
+  }
 
 }

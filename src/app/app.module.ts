@@ -17,6 +17,7 @@ import { AccommodationService } from './services/accommodation/accommodation.ser
 import {MatListModule} from '@angular/material/list';
 import { AdditionalserivcesService } from './services/additionalservices/additionalserivces.service';
 import { PriceplanComponent } from './components/priceplan/priceplan.component';
+import { RoomService } from './services/room/room.service';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,7 @@ import { PriceplanComponent } from './components/priceplan/priceplan.component';
     FormsModule,
     MatListModule
   ],
-  providers: [AgentService,AccommodationService,AdditionalserivcesService],
+  providers: [AgentService,AccommodationService,AdditionalserivcesService,RoomService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

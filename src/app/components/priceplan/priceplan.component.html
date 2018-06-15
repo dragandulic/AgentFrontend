@@ -9,20 +9,65 @@
       <ul class="list-group" style="padding-top: 29px; padding-left: 14px; padding-right: 14px; padding-bottom: 30px;">
         <li class="list-group-item" *ngFor="let accommodation of Accommodations" >
           {{accommodation.name}}
-
+          <button class="btn btn-primary" id="{{accommodation.id}}" (click)="getRoomsOfAccommodation(accommodation.id)">Add price</button>
         </li>
         
       </ul>
-
-
     </div>
 
     <div class="col-md-1"></div>
 
     <div class="col bg-light" >
       
-
-
+      <div class="row" style="padding-top: 20px; padding-left: 14px; padding-right:  14px;">
+        <label class="col-md-2">January:</label>
+        <input type="text" class="col-md-4">
+      </div>
+      <div class="row" style="padding-top: 20px; padding-left: 14px; padding-right:  14px;">
+          <label class="col-md-2">February:</label>
+          <input type="text" class="col-md-4">
+      </div>  
+      <div class="row" style="padding-top: 20px; padding-left: 14px; padding-right:  14px;">
+          <label class="col-md-2">March:</label>
+          <input type="text" class="col-md-4">
+      </div>
+      <div class="row" style="padding-top: 20px; padding-left: 14px; padding-right:  14px;">
+          <label class="col-md-2">April:</label>
+          <input type="text" class="col-md-4">
+      </div> 
+      <div class="row" style="padding-top: 20px; padding-left: 14px; padding-right:  14px;">
+          <label class="col-md-2">May:</label>
+          <input type="text" class="col-md-4">
+      </div> 
+      <div class="row" style="padding-top: 20px; padding-left: 14px; padding-right:  14px;">
+          <label class="col-md-2">June:</label>
+          <input type="text" class="col-md-4">
+      </div> 
+      <div class="row" style="padding-top: 20px; padding-left: 14px; padding-right:  14px;">
+          <label class="col-md-2">July:</label>
+          <input type="text" class="col-md-4">
+      </div> 
+      <div class="row" style="padding-top: 20px; padding-left: 14px; padding-right:  14px;">
+          <label class="col-md-2">August:</label>
+          <input type="text" class="col-md-4">
+      </div> 
+      <div class="row" style="padding-top: 20px; padding-left: 14px; padding-right:  14px;">
+          <label class="col-md-2">September:</label>
+          <input type="text" class="col-md-4">
+      </div> 
+      <div class="row" style="padding-top: 20px; padding-left: 14px; padding-right:  14px;">
+          <label class="col-md-2">October:</label>
+          <input type="text" class="col-md-4">
+      </div> 
+      <div class="row" style="padding-top: 20px; padding-left: 14px; padding-right:  14px;">
+          <label class="col-md-2">November:</label>
+          <input type="text" class="col-md-4">
+      </div> 
+      <div class="row" style="padding-top: 20px; padding-left: 14px; padding-right:  14px;">
+          <label class="col-md-2">December:</label>
+          <input type="text" class="col-md-4">
+      </div> 
+    
     </div>
 
   </div>
