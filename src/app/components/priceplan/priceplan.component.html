@@ -1,28 +1,32 @@
 <div class="container-fluid ">
-  
+
+  <div class="row" style="margin-top: 20px;"></div>
+
   <div class="row">
+
     <div class="col bg-light">
-     
-      <ul class="list-group" *ngFor="let accommodation of accommodations">
+
+      <ul class="list-group" style="padding-top: 29px; padding-left: 14px; padding-right: 14px; padding-bottom: 30px;">
+        <li class="list-group-item" *ngFor="let accommodation of Accommodations" >
+          {{accommodation.name}}
+
+        </li>
         
-        {{accommodation.free}}
-
-
       </ul>
-      
-    </div>
-      
-      
-      
-      
-    <div class="col bg-light">
-      
-      
-          
-    </div>
 
 
+    </div>
+
+    <div class="col-md-1"></div>
+
+    <div class="col bg-light" >
+      
+
+
+    </div>
 
   </div>
  
+  
 </div>
+

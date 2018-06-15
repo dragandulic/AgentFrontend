@@ -16,7 +16,12 @@ export class PriceplanComponent implements OnInit {
   ngOnInit() {
 
     this.accomodationService.mineAccommodation(1)
-    .subscribe(data => this.Accommodations = data);
+    .subscribe(data =>{ this.Accommodations = data
+      console.log(this.Accommodations[0]);
+    });
   }
+
+  
+
 
 }
