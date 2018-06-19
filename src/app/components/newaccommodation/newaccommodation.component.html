@@ -8,7 +8,7 @@
   <legend style="margin-left: 12px;">Basic info:</legend>
   <div class="form-group ">
     <label class="col-sm-2" for="Name">Name:</label>
-    <input class="col-sm-2" type="text" [(ngModel)]="accommodation.name" name="name" style="font-size: 12px" placeholder="Name">
+    <input class="col-sm-2" type="text" [(ngModel)]="accommodation.name" name="name" style="font-size: 12px" placeholder="Name" #name required>
   </div>
   <div class="form-group ">
       <label class="col-sm-2" for="Name">Type:</label>
@@ -21,22 +21,22 @@
   </div>
   <div class="form-group ">
       <label class="col-sm-2 d-inline align-top"  for="Name">Description:</label>
-      <textarea class="form-control col-sm-2 d-inline" [(ngModel)]="accommodation.description" name="description" style="margin-left: 70px; font-size: 11px;" rows="2"  id="comment"></textarea>
+      <textarea class="form-control col-sm-2 d-inline" [(ngModel)]="accommodation.description" name="description" style="margin-left: 70px; font-size: 11px;" rows="2"  id="comment" #desc required></textarea>
       
   </div>
   <br>
   <legend style="margin-left: 12px;">Location:</legend>
   <div class="form-group ">
       <label class="col-sm-2" for="Country">Country:</label>
-      <input class="col-sm-2" type="text" [(ngModel)]="accommodation.country" name="country" style="font-size: 12px" placeholder="Country">
+      <input class="col-sm-2" type="text" [(ngModel)]="accommodation.country" name="country" style="font-size: 12px" placeholder="Country" #country required>
   </div>
   <div class="form-group ">
       <label class="col-sm-2" for="City">City:</label>
-      <input class="col-sm-2" type="text" [(ngModel)]="accommodation.city" name="city" style="font-size: 12px" placeholder="City">
+      <input class="col-sm-2" type="text" [(ngModel)]="accommodation.city" name="city" style="font-size: 12px" placeholder="City" #city required>
   </div>
   <div class="form-group ">
       <label class="col-sm-2" for="Address">Address:</label>
-      <input class="col-sm-2" type="text" [(ngModel)]="accommodation.address" name="address" style="font-size: 12px" placeholder="Address">
+      <input class="col-sm-2" type="text" [(ngModel)]="accommodation.address" name="address" style="font-size: 12px" placeholder="Address" #address required>
   </div>
 
   <div class="row"></div>
@@ -62,7 +62,7 @@
   <br>
   <br>
     <div class="row">
-      <div class="col-sm-2"><button style="margin-left: 300px;" type="submit" (click)="addNewAccommodation()" class="btn btn-primary">Submit</button></div>
+      <div class="col-sm-2"><button style="margin-left: 300px;" type="submit" (click)="addNewAccommodation(); name.value=''; desc.value=''; country.value=''; city.value=''; address.value=''" class="btn btn-primary">Submit</button></div>
       <div class="col-*-*"></div>
     </div>
                   

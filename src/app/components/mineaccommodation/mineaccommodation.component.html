@@ -14,7 +14,7 @@
                     </p>
                     <div>
                       <button class="btn btn-primary" id="{{accommodation.id}}" (click)="editAcc(accommodation.id)">Edit</button>
-                      <button class="btn btn-primary" id="{{accommodation.id}}" (click)="deleteAcc(accommodation.id)">Delete</button>
+                      <!-- <button class="btn btn-primary" id="{{accommodation.id}}" (click)="deleteAcc(accommodation.id)">Delete</button>-->
                       <button class="btn btn-primary" id="{{accommodation.id}}" (click)="setreserve(accommodation.id)" data-toggle="modal" data-target="#myModal">Reserve</button>
                     </div>
                   </li>
@@ -31,12 +31,12 @@
               
                 <div class="form-group ">
                   <label class="col-sm-2" for="Name">Name:</label>
-                  <input class="col-sm-2" type="text" [(ngModel)]="acc.name" name="name" style="font-size: 12px" >
+                  <input class="col-sm-2" type="text" [(ngModel)]="acc.name" name="name" style="font-size: 12px" #emailr required>
                 </div>
 
                 <div class="form-group ">
                     <label class="col-sm-2" for="Name">Type:</label>
-                    <select id="type" (change)="selectChangeHandler($event)" name="type" style="font-size: 13px" class="col-sm-2">
+                    <select id="type" (change)="selectChangeHandler($event)" name="type" style="font-size: 13px" class="col-sm-2" >
                         <option class="option0" value="0" selected hidden>Choose ...</option>
                         <option value="Hotel">Hotel</option>
                         <option value="Bad&breakfast">Bad&breakfast</option>
@@ -51,15 +51,15 @@
                 <legend style="margin-left: 12px;">Location:</legend>
                 <div class="form-group ">
                     <label class="col-sm-2" for="Country">Country:</label>
-                    <input class="col-sm-2" type="text" [(ngModel)]="loc.country" name="country" style="font-size: 12px" >
+                    <input class="col-sm-2" type="text" [(ngModel)]="loc.country" name="country" style="font-size: 12px" #emailr required>
                 </div>
                 <div class="form-group ">
                     <label class="col-sm-2" for="City">City:</label>
-                    <input class="col-sm-2" type="text" [(ngModel)]="loc.city" name="city" style="font-size: 12px" >
+                    <input class="col-sm-2" type="text" [(ngModel)]="loc.city" name="city" style="font-size: 12px" #emailr required>
                 </div>
                 <div class="form-group ">
                     <label class="col-sm-2" for="Address">Address:</label>
-                    <input class="col-sm-2" type="text" [(ngModel)]="loc.address" name="address" style="font-size: 12px" >
+                    <input class="col-sm-2" type="text" [(ngModel)]="loc.address" name="address" style="font-size: 12px" #emailr required>
                 </div>
                 <div class="row"></div>
                 
