@@ -63,4 +63,11 @@ export class AccommodationService {
 
   }
 
+
+  getTypes(): Observable<any>{
+
+    return this.http.get<any>('http://localhost:8086/accommodation/getacctypes');
+
+  }
+
 }

@@ -12,6 +12,7 @@ export class NewaccommodationComponent implements OnInit {
 
   accommodation: any={};
   additionalSer: string[];
+  additionalType: string[];
   selectedOptions: any;
 
   constructor(private accommodationService: AccommodationService,
@@ -24,6 +25,8 @@ export class NewaccommodationComponent implements OnInit {
  
     });
 
+    this.accommodationService.getTypes()
+    .subscribe(data => this.additionalType = data);
     
   }
 
