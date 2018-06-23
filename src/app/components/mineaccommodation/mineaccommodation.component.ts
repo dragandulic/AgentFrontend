@@ -4,6 +4,9 @@ import { Location } from '../../location';
 import { AccommodationService } from '../../services/accommodation/accommodation.service';
 import { AdditionalServices } from '../../additionalServices';
 import { AdditionalserivcesService } from '../../services/additionalservices/additionalserivces.service';
+import {LogService} from '../../services/log/log.service';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Agent } from '../../agent';
 
 @Component({
   selector: 'app-mineaccommodation',
@@ -22,13 +25,15 @@ export class MineaccommodationComponent implements OnInit {
   reserveAccommodation: any={};
   additionalSer: string[];
   selectedOptions: any;
+  u: Agent;
 
-
-  constructor(private accommodationService: AccommodationService, private additionalService: AdditionalserivcesService) { }
+  constructor(private accommodationService: AccommodationService, private additionalService: AdditionalserivcesService, private loggedin: LogService, private router: Router) { }
 
   ngOnInit() {
+    var ua = this.loggedin.getLocalStore();
+    this.u=ua;
     this.showEdit=false;
-    this.accommodationService.mineAccommodation(1)
+    this.accommodationService.mineAccommodation(this.u.id)
     .subscribe(data =>{this.accommodations=data;
 
     });
