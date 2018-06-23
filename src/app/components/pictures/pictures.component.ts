@@ -10,6 +10,7 @@ import { AccommodationDTO } from '../../accommodation';
 export class PicturesComponent implements OnInit {
 
   accommodations: AccommodationDTO[];
+  accommodationPicture: any={};
 
   constructor(private accService: AccommodationService) { }
 
@@ -21,10 +22,10 @@ export class PicturesComponent implements OnInit {
     });
   }
 
-  onFileSelected(event){
-    console.log(event);
+  
+  idOfAccommodation(id): void{
+    this.accommodationPicture.id = id;
+    
   }
-
-
 
 }

@@ -32,7 +32,7 @@ export class NewaccommodationComponent implements OnInit {
 
 
   addNewAccommodation(): void{
-
+    console.log(this.accommodation.picture);
     this.accommodation.aditionalServices = this.selectedOptions;
     
     this.accommodationService.newAccommodation(this.accommodation)
