@@ -13,12 +13,13 @@ import { NewaccommodationComponent } from './components/newaccommodation/newacco
 import { MineaccommodationComponent } from './components/mineaccommodation/mineaccommodation.component';
 import { AccommodationDTO } from './accommodation';
 import { AccommodationService } from './services/accommodation/accommodation.service';
-
+import {Ng2Webstorage} from 'ngx-webstorage';
 import {MatListModule} from '@angular/material/list';
 import { AdditionalserivcesService } from './services/additionalservices/additionalserivces.service';
 import { PriceplanComponent } from './components/priceplan/priceplan.component';
 import { RoomService } from './services/room/room.service';
 import { PicturesComponent } from './components/pictures/pictures.component';
+import { LogService } from './services/log/log.service';
 
 @NgModule({
   declarations: [
@@ -37,9 +38,10 @@ import { PicturesComponent } from './components/pictures/pictures.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    MatListModule
+    MatListModule,
+    Ng2Webstorage
   ],
-  providers: [AgentService,AccommodationService,AdditionalserivcesService,RoomService],
+  providers: [AgentService,AccommodationService,AdditionalserivcesService,RoomService,LogService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
