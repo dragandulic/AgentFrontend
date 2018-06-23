@@ -1,5 +1,6 @@
 export class priceplanedto{
 
+	id: number;
     roomType : number;
 	idAccommodation : number;
 	january : number;

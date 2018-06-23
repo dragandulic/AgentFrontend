@@ -38,14 +38,28 @@ export class PriceplanComponent implements OnInit {
 
   selectChangeHandler (event : any){
     this.pricaPlan.roomType =  event.target.value;
+    
    
   }
 
   addPricePlan(): void{
-
+   
     this.accomodationService.addPricePlaneForAcc(this.pricaPlan)
-    .subscribe(data => this.pricePlann = data);
-
+    .subscribe(data => {this.pricePlann = data;
+      
+    });
+    this.pricaPlan.january=0;
+    this.pricaPlan.february=0;
+    this.pricaPlan.march=0;
+    this.pricaPlan.april=0;
+    this.pricaPlan.may=0;
+    this.pricaPlan.june=0;
+    this.pricaPlan.july=0;
+    this.pricaPlan.august=0;
+    this.pricaPlan.september=0;
+    this.pricaPlan.october=0;
+    this.pricaPlan.november=0;
+    this.pricaPlan.december=0;
   }
 
 }
