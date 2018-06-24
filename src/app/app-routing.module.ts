@@ -8,6 +8,7 @@ import { NewaccommodationComponent } from './components/newaccommodation/newacco
 import { MineaccommodationComponent } from './components/mineaccommodation/mineaccommodation.component';
 import { PriceplanComponent } from './components/priceplan/priceplan.component';
 import { PicturesComponent } from './components/pictures/pictures.component';
+import { ReservationsComponent } from './components/reservations/reservations.component';
 
 const routes: Routes = [
 
@@ -21,7 +22,8 @@ const routes: Routes = [
         { path: 'newaccommodation', component: NewaccommodationComponent},
         { path: 'mineaccommodation', component: MineaccommodationComponent},
         { path: 'priceplan', component: PriceplanComponent},
-        { path: 'pictures', component: PicturesComponent}
+        { path: 'pictures', component: PicturesComponent},
+        { path: 'reservations', component: ReservationsComponent}
      ]
     
   }
