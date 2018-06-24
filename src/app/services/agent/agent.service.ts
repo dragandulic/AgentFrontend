@@ -24,4 +24,15 @@ export class AgentService {
 
   }
 
+
+  //MESSAGE
+  sendMessage(userid,commentcontent:any):Observable<any>{
+    return this.http.post('http://localhost:8086/email/sendEmailSoap',{
+   
+    userid:userid,
+    commentcontent:commentcontent
+    
+    })
+  }
+
 }

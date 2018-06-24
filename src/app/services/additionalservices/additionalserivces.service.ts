@@ -19,4 +19,11 @@ export class AdditionalserivcesService {
 
   }
 
+
+  getCategory(): Observable<any>{
+
+    return this.http.get<any>('http://localhost:8086/additionalServices/getcategory');
+
+  }
+
 }

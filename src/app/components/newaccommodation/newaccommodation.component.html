@@ -25,7 +25,14 @@
   </div>
   <div class="form-group ">
     <label class="col-sm-2" for="Name">Category:</label>
-    <input class="col-sm-2" type="text" [(ngModel)]="accommodation.category" name="category" style="font-size: 12px" placeholder="Category" #namee required>
+    <div class="row">
+      <mat-selection-list class="col-sm-4" #listcat>
+       <mat-list-option *ngFor="let shoe of category" [selected]="shoe.selected" [value]="shoe" (click)="onSelectOptionChangeCategory(listcat)">
+         {{shoe}}
+      
+       </mat-list-option>
+      </mat-selection-list>
+    </div>
   </div>
   <br>
   <legend style="margin-left: 12px;">Location:</legend>
@@ -82,7 +89,7 @@
   <br>
   <br>
     <div class="row">
-      <div class="col-sm-2"><button style="margin-left: 300px;" type="submit" (click)="addNewAccommodation(); name.value=''; namee.value=''; desc.value=''; country.value=''; city.value=''; address.value=''" class="btn btn-primary">Submit</button></div>
+      <div class="col-sm-2"><button style="margin-left: 300px;" type="submit" (click)="addNewAccommodation(); name.value=''; desc.value=''; country.value=''; city.value=''; address.value=''" class="btn btn-primary">Submit</button></div>
       <div class="col-*-*"></div>
     </div>
                   

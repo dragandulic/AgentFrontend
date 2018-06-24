@@ -16,7 +16,9 @@ export class NewaccommodationComponent implements OnInit {
   additionalSer: string[];
   additionalType: string[];
   selectedOptions: any;
+  selectedOptionsCategory: any;
   u: Agent;
+  category: string[];
 
   constructor(private accommodationService: AccommodationService,
      private additionalService: AdditionalserivcesService, private loggedin: LogService, private router: Router) { }
@@ -31,6 +33,9 @@ export class NewaccommodationComponent implements OnInit {
     this.accommodationService.getTypes()
     .subscribe(data => this.additionalType = data);
     
+
+    this.additionalService.getCategory()
+    .subscribe(data => this.category = data);
   }
 
 
@@ -40,6 +45,7 @@ export class NewaccommodationComponent implements OnInit {
     var ua = this.loggedin.getLocalStore();
     this.u=ua;
     this.accommodation.aditionalServices = this.selectedOptions;
+    this.accommodation.category = this.selectedOptionsCategory[0];
     this.accommodation.idAgent=this.u.id;
     this.accommodationService.newAccommodation(this.accommodation)
     .subscribe(data => this.accommodation = data);
@@ -57,5 +63,10 @@ export class NewaccommodationComponent implements OnInit {
 
   }
 
+  onSelectOptionChangeCategory(list: any) {
+    
+    this.selectedOptionsCategory = list.selectedOptions.selected.map(item => item.value);
+    console.log(this.selectedOptionsCategory[0]);
+  }
 
 }

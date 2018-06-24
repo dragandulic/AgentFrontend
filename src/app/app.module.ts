@@ -22,6 +22,8 @@ import { PicturesComponent } from './components/pictures/pictures.component';
 import { LogService } from './services/log/log.service';
 import { ReservationsComponent } from './components/reservations/reservations.component';
 import { ReservationService } from './services/reservation/reservation.service';
+import { MessageComponent } from './components/message/message.component';
+import {  ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import { ReservationService } from './services/reservation/reservation.service';
     MineaccommodationComponent,
     PriceplanComponent,
     PicturesComponent,
-    ReservationsComponent
+    ReservationsComponent,
+    MessageComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +45,8 @@ import { ReservationService } from './services/reservation/reservation.service';
     HttpClientModule,
     FormsModule,
     MatListModule,
-    Ng2Webstorage
+    Ng2Webstorage,
+    ReactiveFormsModule
   ],
   providers: [AgentService,AccommodationService,AdditionalserivcesService,RoomService,LogService,ReservationService],
   bootstrap: [AppComponent]

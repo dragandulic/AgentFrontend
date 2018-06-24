@@ -9,6 +9,7 @@ import { MineaccommodationComponent } from './components/mineaccommodation/minea
 import { PriceplanComponent } from './components/priceplan/priceplan.component';
 import { PicturesComponent } from './components/pictures/pictures.component';
 import { ReservationsComponent } from './components/reservations/reservations.component';
+import { MessageComponent } from './components/message/message.component';
 
 const routes: Routes = [
 
@@ -23,7 +24,8 @@ const routes: Routes = [
         { path: 'mineaccommodation', component: MineaccommodationComponent},
         { path: 'priceplan', component: PriceplanComponent},
         { path: 'pictures', component: PicturesComponent},
-        { path: 'reservations', component: ReservationsComponent}
+        { path: 'reservations', component: ReservationsComponent},
+        { path: 'message/:id', component: MessageComponent}
      ]
     
   }
