@@ -20,6 +20,8 @@ import { PriceplanComponent } from './components/priceplan/priceplan.component';
 import { RoomService } from './services/room/room.service';
 import { PicturesComponent } from './components/pictures/pictures.component';
 import { LogService } from './services/log/log.service';
+import { ReservationsComponent } from './components/reservations/reservations.component';
+import { ReservationService } from './services/reservation/reservation.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import { LogService } from './services/log/log.service';
     NewaccommodationComponent,
     MineaccommodationComponent,
     PriceplanComponent,
-    PicturesComponent
+    PicturesComponent,
+    ReservationsComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +44,7 @@ import { LogService } from './services/log/log.service';
     MatListModule,
     Ng2Webstorage
   ],
-  providers: [AgentService,AccommodationService,AdditionalserivcesService,RoomService,LogService],
+  providers: [AgentService,AccommodationService,AdditionalserivcesService,RoomService,LogService,ReservationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

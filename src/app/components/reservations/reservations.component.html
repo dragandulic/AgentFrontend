@@ -1,0 +1,69 @@
+<div class="row">
+
+  <div class="col-md-2">
+
+  </div>
+
+  <div class="col-md-7 bg-light" style="margin-bottom: 50px;">
+
+    <ul class="list-group" style="padding-top: 29px; padding-left: 14px; padding-right: 14px; padding-bottom: 30px;">
+      <li class="list-group-item" *ngFor="let reservation of reservations" >
+        <div class="row">
+
+        
+          <div class="col-md-8">
+            <div class="row">
+              <div class="col-md-6">
+                  <h6>{{reservation.accommodation.name}}</h6>
+              </div>
+            </div>
+            
+            <div class="row">
+              <div class="col-md-6">
+                <label for="">Check in: </label>{{reservation.startDate}}
+              </div>
+              
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="">Check out: </label>{{reservation.endDate}}
+                  </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                  <label for="">Room type: </label> {{reservation.roomType}}
+                </div>
+                
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                  <label for="">Name: </label> {{reservation.name}}
+                </div>
+                
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                  <label for="">Surname: </label> {{reservation.surname}}
+                </div>
+                
+            </div>
+        </div>
+          
+        <div class="col-md-2">
+            <br><br>
+          <button class="btn btn-outline-primary" style="margin-right: 20px;" id="{{reservation.id}}" (click)="AcceptRegistration(reservation.id)">Accept</button>
+
+        </div>
+
+        <div class="col-md-2">
+            <br><br>
+          <button class="btn btn-outline-primary" style="margin-right: 30px;" id="{{reservation.id}}" (click)="DeleteRegistration(reservation.id)">Don't accept</button>
+
+        </div>
+
+      </div>
+      </li>
+      
+    </ul>
+  </div>
+</div>
