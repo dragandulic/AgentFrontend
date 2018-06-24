@@ -18,10 +18,10 @@ export class ReservationsComponent implements OnInit {
 
   ngOnInit() {
   
-   // var ua = this.logenid.getLocalStore();
-    //this.u = ua;
+    var ua = this.logenid.getLocalStore();
+    this.u = ua;
 
-    this.reservationService.getreservationOfAgent(1)
+    this.reservationService.getreservationOfAgent(this.u.id)
     .subscribe(data =>{ this.reservations = data;
     });
 
