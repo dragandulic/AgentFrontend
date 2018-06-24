@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AccommodationService } from '../../services/accommodation/accommodation.service';
 import { AdditionalserivcesService } from '../../services/additionalservices/additionalserivces.service';
-
+import {LogService} from '../../services/log/log.service';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Agent } from '../../agent';
 
 @Component({
   selector: 'app-newaccommodation',
@@ -14,9 +16,10 @@ export class NewaccommodationComponent implements OnInit {
   additionalSer: string[];
   additionalType: string[];
   selectedOptions: any;
+  u: Agent;
 
   constructor(private accommodationService: AccommodationService,
-     private additionalService: AdditionalserivcesService) { }
+     private additionalService: AdditionalserivcesService, private loggedin: LogService, private router: Router) { }
 
   ngOnInit() {
 
@@ -33,8 +36,11 @@ export class NewaccommodationComponent implements OnInit {
 
   addNewAccommodation(): void{
     console.log(this.accommodation.picture);
+
+    var ua = this.loggedin.getLocalStore();
+    this.u=ua;
     this.accommodation.aditionalServices = this.selectedOptions;
-    
+    this.accommodation.idAgent=this.u.id;
     this.accommodationService.newAccommodation(this.accommodation)
     .subscribe(data => this.accommodation = data);
 

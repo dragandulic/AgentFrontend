@@ -3,6 +3,9 @@ import { AccommodationService } from '../../services/accommodation/accommodation
 import { AccommodationDTO } from '../../accommodation';
 import { RoomService } from '../../services/room/room.service';
 import { priceplanedto } from '../../priceplandto';
+import {LogService} from '../../services/log/log.service';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Agent } from '../../agent';
 
 @Component({
   selector: 'app-priceplan',
@@ -15,11 +18,14 @@ export class PriceplanComponent implements OnInit {
   typesOfRoom: string[];
   pricaPlan: any={};
   pricePlann: priceplanedto;
-  constructor(private accomodationService: AccommodationService, private roomservice: RoomService) { }
+  u: Agent;
+
+  constructor(private accomodationService: AccommodationService, private roomservice: RoomService, private loggedin: LogService, private router: Router) { }
 
   ngOnInit() {
-
-    this.accomodationService.mineAccommodation(1)
+    var ua = this.loggedin.getLocalStore();
+    this.u=ua;
+    this.accomodationService.mineAccommodation(this.u.id)
     .subscribe(data =>{ this.Accommodations = data
       
     });
